@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Change to your project's title -->
+    <title>Johannesburg Mining Supply Chain</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+    <script type="text/javascript">
+      var jQuery_1_4_3
+      jQuery_1_4_3=$.noConflict(true);
+      </script>
+
+      <script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+      <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+      <link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      <!-- Site specific CSS -->
+      <link rel="stylesheet" href="css/csr-casestudy.css">
+      <link rel="stylesheet" href="css/footnotes.css">
+      <!-- Webfont CSS -->
+      <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/c28915cb-7a1f-477c-9084-e9e755ede452.css">
+
+      <!-- fancy box stuff -->
+
+      <script type="text/javascript">
+             $(document).ready(function() {
+               /*
+               *   Examples - images
+               */
+
+               $("a#example1").fancybox();
+
+               $("a#example2").fancybox({
+                 'overlayShow'	: false,
+                 'transitionIn'	: 'elastic',
+                 'transitionOut'	: 'elastic'
+               });
+
+               $("a#example3").fancybox({
+                 'transitionIn'	: 'none',
+                 'transitionOut'	: 'none'
+               });
+
+               $("a#example4").fancybox({
+                 'opacity'		: true,
+                 'overlayShow'	: false,
+                 'transitionIn'	: 'elastic',
+                 'transitionOut'	: 'none'
+               });
+
+               $("a#example5").fancybox();
+
+               $("a#example6").fancybox({
+                 'titlePosition'		: 'outside',
+                 'overlayColor'		: '#000',
+                 'overlayOpacity'	: 0.9
+               });
+
+               $("a#example7").fancybox({
+                 'titlePosition'	: 'inside'
+               });
+
+               $("a#example8").fancybox({
+                 'titlePosition'	: 'over'
+               });
+
+               $("a[rel=example_group]").fancybox({
+                 'transitionIn'		: 'none',
+                 'transitionOut'		: 'none',
+                 'titlePosition' 	: 'over',
+                 'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+                   return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                 }
+               });
+
+               /*
+               *   Examples - various
+               */
+
+               $("#various1").fancybox({
+                 'titlePosition'		: 'inside',
+                 'transitionIn'		: 'none',
+                 'transitionOut'		: 'none'
+               });
+
+               $("#various2").fancybox();
+
+               $("#various3").fancybox({
+                 'width'				: '75%',
+                 'height'			: '75%',
+                 'autoScale'			: false,
+                 'transitionIn'		: 'none',
+                 'transitionOut'		: 'none',
+                 'type'				: 'iframe'
+               });
+
+               $("#various4").fancybox({
+                 'padding'			: 0,
+                 'autoScale'			: false,
+                 'transitionIn'		: 'none',
+                 'transitionOut'		: 'none'
+               });
+             });
+           </script>
+  </head>
+  <body>
+    <!-- Top navbar (do not change)-->
+    <nav class = "navbar fixed-top c4sr-navbar" role="navigation" id="c4sr-navbar">
+      <div class="container-fluid" id="c4sr-titlemobile">
+        <div class="c4sr-menu-left">
+          <a class = "navbar-link" href="../../index.html">Conflict Urbanism: InfraPolitics</a>
+        </div>
+        <div class ="c4sr-menu-right">
+          <a class = "navbar-link" href="../../index.html">About</a>
+          <a class = "navbar-link" href="../../index.html#caseStudies">Projects</a>
+          <a class = "navbar-link" href="../../index.html#people">People</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main content -->
+    <div class="container-fluid">
+    <div class="c4sr-contentwrapper">
+      <div class ="row" id="top-row">
+        <div class ="col-md-12" >
+          <!-- Your project title -->
+          <h2>Johannesburg’s Mining Supply Chain - The Development of Periphery Towns</h2>
+          <!-- Your name, degree program and school -->
+          <div class="caption">Sean Nelsen, MS Urban Planning</div>
+          </div>
+        </div>
+
+    <!-- Side navigation menu -->
+      <div class = "row">
+        <div class = "col-md-3">
+          <div class ="nav" id="legend">
+            <ul class = "c4sr-sidenav">
+              <!-- Make as many sections as fit your project  -->
+              <!-- Change the href to match the associated h5 id tag -->
+              <br/>
+              <br/>
+              <li><a href="#intro">An Urban Agglomeration</a></li>
+              <li><a href="#intro2">Development Typologies</a></li>
+              <li><a href="#first">Landsat Methodology</a></li>
+              <li><a href="#second">Klerksdorp</a></li>
+              <li><a href="#third">Middelburg</a></li>
+              <li><a href="#fourth">Sasolburg</a></li>
+              <li><a href="#fifth">Biopolitical Development</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <script>
+        window.onscroll = function() {myFunction()};
+        var lnd = document.getElementById("legend");
+        var sticky = lnd.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= 149){
+              $(document).ready(function(){
+                $('#legend').attr('id', 'sticky-menu')
+              });
+            }
+            if (window.pageYOffset < 149){
+
+              $(document).ready(function(){
+                $('#sticky-menu').attr('id', 'legend')
+              }
+            )}
+          }
+        </script>
+
+      <!-- Section for the text and images for your project -->
+        <div class = "col-md-6 body-text">
+          <!-- create your own id tag that matches the href you create in the sidenav section-->
+          <center><img src="img/images/VallRiver.jpg" class="img-fluid" id="c4sr-embed" alt="Miner at Vall River Mine"></center>
+          <div class="caption">A miner in the Vall River Gold Mine outside of Klerksdorp, SA.<br/>Source: http://www.miningeducation.com/</div>
+          <div></div>
+          <div id = "intro"></div>
+          <br><br><br>
+          <h5>An Urban Agglomeration</h5><br/>
+         Gauteng means a “Place of Gold,” a Sotho word that derived from the Dutch word for gold.  This etymology embodies the colonial history of South
+         Africa, a European precedent forced on subaltern African tribes. Gold was discovered in the region in 1886, making Gauteng the world’s largest
+         producer, with Johannesburg at the nucleus.<div class="footnote">1</div> Based on the primitive accumulation associated with the extraction and
+         production of Gold, Johannesburg became spatially stratified between the colonial and the subaltern, where the colonial was racially white and
+         the subaltern racially black.<div class="footnote">2</div> Post-apartheid spatial politics created a new element of segregation through class.<div class="footnote">3</div>
+         <br/><br/>
+
+         In 2003, the Gauteng Spatial Planning Framework (GSDF) was developed to assist in the growth of the region.  Continued production and
+         extraction through the region's mining network promoted the need for a spatial and integral framework for the region to abide by. The Gauteng
+         region is made up of a network of mining towns, which acts as a functionally connected and continuous urban agglomeration.<div class="footnote">4</div>
+
+          <center><a id="example6" href="img/images/ContextMap.jpg"><img class="img-fluid" width="100%" margin="auto" src="img/images/ContextMap.jpg" alt="Map of the Guateng region"/></a></center>
+          <div class="caption">Mining facilities in the Guateng region.<br/>Source: Sean Nelson. Data Source: USGS, StatsSA,and Natural Earth</div>
+
+          In recent years, the globalized economy has supported continued production and extraction within these peripheral towns.  Sasolburg and Middelburg’s
+          coal production, Rustenberg’s platinum extraction, and Klerksdorp’s gold mines and uranium prospects, have propelled these small peripheral towns into
+          immense production. This new production requires a modern wage labor to aid in the productive processes.
+          <br/><br/>
+
+          Industry’s forcible attraction for labor in these towns carries the need for a definition and development of the spatial politics of the city. The
+          dangerous nature of industrial employment, and South Africa’s dark history associated with mining, creates a contemporary perspective of biopower.<div class="footnote">5</div>
+          Where the contemporary subjugation is solely based on stratification through primitive accumulation, and the state’s acquiescence to this hegemony.
+          <br/><br/>
+
+          While Johannesburg experienced a 38 percent increase in its population, the peripheral mining towns of Klerksdorp, Middelburg, and Sasolburg saw population
+          double, quintuple, and sextuple, respectively. That level of growth requires a planning framework for housing the labor force. These growing towns allow us
+          to inquire about the spatial development typologies experienced in Johannesburg and other cities.
+          <br/><br/>
+
+          Through a spatial and temporal analysis of these peripheral towns, we can explore development typologies and determine if there is a continued racialization
+          of space due to capital accumulation. Using Landsat technology, we can pinpoint the development changes in these three towns. South African census data will
+          help provide a context of the people who inhabit these places.
+
+          <div id = "intro2"></div>
+              <br><br><br>
+
+          <h5>Development Typologies</h5><br/>
+
+          The emerging industry of mining in the Gauteng region created a spatial development derived on the extraction and production of Gold. The capital accumulation
+          of the ore bifurcated the governance structure in the region and created a bipolar spatial arrangement between Pretoria and Johannesburg. Infrastructure networks
+          were established in the region to link each production nucleus to Johannesburg.<div class="footnote">6</div>
+          <br/><br/>
+
+          The capital accumulation the accompanies a gold mining venture produced an extensive infrastructural network of rail and road. Coal shipments and metallic processing
+          supported the technical machinery in extracting the gold.  Commensurate with the mining industry, these infrastructural endeavors subverted the natural landscape,
+          diverting and manipulating the Vaal River to act as a main water source in the region. The connection of these industries and developments created a “polynuclear
+          structure” that defines the Gauteng region.<div class="footnote">7</div>
+          <br/><br/>
+
+          This regional operation “stands at the center of the nation’s infrastructural network… national roads, passenger and freight rail, road freight routes, gas and oil
+          pipelines, electricity transmission lines, water transfer schemes, and national and international air corridors all converge on, or radiate from this region. Brian
+          Larkin would define the poetics of this infrastructural network as the political acquiescence to capital, similar to Michel Foucault’s apparatus of governmentality.
+          <br/><br/>
+
+          Within each nucleus, the infrastructural developments have organized the space according to the operation of their respective industries. The disposition of these
+          infrastructural developments placates to the capitalist endeavors of the region and exposes the political bearing in the folds of these developments.<div class="footnote">8</div>
+          This is apparent when looking singularly at a mining town on the periphery of the Gauteng region.  When observing the growth and development of these towns, we can
+          detect the disposition of housing developments through analyzing their spatial growth in conjunction with a nuanced purview of the social aspects associated with the
+          lived experiences in these spatial developments.
+          <br/><br/>
+
+          <li>Fractured Forms: A regional study identified a highly-fractured nature of urban development, through “sparse and scattered pockets of white and non-white residential
+            development.”<div class="footnote">9</div></li></br>
+
+          <li>Sprawl and Inverted Densities: Apartheid policies forced large racially defined populations into ghettos.  Some of these policies also required the decentralization
+            of Africans in dormitory townships, thereby thinly spreading the urban from and delocating habitation form employment.  This historical displacement has created a form
+            of development of inverted densities, where higher densities exist on the edge of the city as opposed to high density in urban centers.</li></br>
+
+          <li>Deconcentration and Displaced Urbanization: The transfer and supported development of industry in peripheral mining towns. <div class="footnote">10</div></li></br>
+
+          <li>Ribbon Development: Development along main corridors of industry and residential development along highways and rail lines.  Characterized as infill development along
+            existing corridors.<div class="footnote">11</div></li>
+
+            <div id = "first"></div>
+              <br><br><br>
+          <h5 id="first">Landsat Methodology</h5><br/>
+
+          Using Landsat 7 and Landsat 8 images provided by the USGS, we can obtain images of the observed towns for years 2001 and 2011. The visualization of the development aligned
+          with the census information will provide a nuanced look into how space was developed, and who populates these places. Due to functionality issues with Landsat 7, images
+          obtained from this satellite after 2003 lack the quality needed to perform this analysis. Due to this methodological limitation, Landsat 8 was used for the spatial analysis
+          using year 2014.
+          <br/><br/>
+
+          Remote sensing was used to identify areas of physical change in the respective cities between 2001 and 2014. This process uses multispectral bands to develop an RGB image,
+          produced by measuring the reflection and radiation of a specific area through satellite sensors. The imaged produced is a multiple band amalgamation of several monochrome
+          images. This allows a user options to adjust the which band aligns with which RGB color, in turn producing different image saturations and hues. Various combinations
+          highlight certain phenomena experienced on the ground, but visualized through reflection and radiation.
+          <br/><br/>
+
+          <div class="embed-responsive embed-responsive-1by1">
+          <iframe frameborder="0" class="juxtapose" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c844ef40-4e80-11e8-b263-0edaf8f81e27"></iframe></div>
+          <div class="caption">Landsat 7, Spectral Bands 753 (left) and Landsat 8, Spectral Bands 764 (right).</br>Source: Sean Nelson. Data Source: USGS.</div>
+
+          In our analysis of the built environment, I used a false-color urban composite to evaluate changes in the built environment. Landsat 7 used band 7,5,3 and Landsat 8 used
+          bands 7,6,4 for their respective RGB colors. The purple, light blue, and white areas on the map represent the built environment. Through geoprocessing tools, a classification
+          for the images were set to the pixel colors that represent a type of environment. After classifying the pixels for both images, a raster calculator was used to see what
+          areas experienced development. An output of this calculator is seen in the image below as highlighted pixels.
+          <br/><br/>
+
+          Applying the social aspect to this visualization required the spatial analytical tools of GIS. First, thanks to the accessibility of the 2001 and 2011 South African Census
+          provided by Adrian Frith, I was able to scrape demographic information for each town at the sub-place level. Joining the census information attribute table to a sub-place
+          shapefile provided by South Africa, I was able to highlight specific demographic information at the sub-place level. This information allows us to see what populations
+          occupy what space and where new development aligns with these social aspects. Finally, using Google Earth and Google Street view, we are able to further understand these
+          spatial typologies and analyze the development characteristics of these towns.
+
+          <div id = "second"></div>
+              <br><br><br>
+           <h5 id="second">Klerksdorp</h5>
+
+          <img src="img/images/Context_Klerskdorp.png" class="img-fluid" id="c4sr-embed" alt="Map of Klerksdorp">
+          <div class="caption">The town of Klerksdorp, 80 miles southwest of Johannesburg, and the surrounding mines.</br>Source: Sean Nelson. Data Source: USGS</div>
+
+          Klerksdorp city was founded by Dutch Voortrekkers in 1837, who settled along the Schoonspruit River. Gold was eventually discovered in 1886, where the town experienced its
+          first population boom by prospective gold-seekers. During World War II, the town experienced another epoch of population growth as gold-mining industries resumed.<div class="footnote">12</div>
+          Between 2001 and 2011, Klerksdorp has grown in population by 213 percent.<div class="footnote">13</div>
+          <br/><br/>
+
+          Using remote sensing, developed land pixels were obtained through geoprocessing tools. Below is an image the denotes the change in the built environment; yellow represents
+          land developed between 2001 and 2014.
+          <br/><br/>
+
+
+          <center><a id="example6" href="img/images/Y_Klerksdorp.png"><img class="img-fluid" width="70%" margin="auto" src="img/images/Y_Klerksdorp.png" alt="Map indicating the urban expansion of Klerksdorp"/></a></center>
+          <br>
+          <div class="caption">A map of Klerksdorp. Yellow areas indicate land that was developed between 2001 and 2014.</br>Source: Sean Nelson. Data Source: USGS.</div>
+
+          Aligning the remote sensing data with census data will help us understand what kind of development took place between 2001 and 2001. Population changes and racial demographics
+          obtained through the South African census create a holistic understanding of how the town developed during its third population boom.
+          <br/><br/>
+
+          <center><a id="example6" href="img/images/Dem_Klerksdorp.png"><img class="img-fluid" width="100%" margin="auto" src="img/images/Dem_Klerksdorp.png" alt="Three maps indicating population growth in Klerksdorp"/></a></center>
+          <div class="caption">(From left to right) Total, Black, and White Population growth in Klerksdorp between 2001 and 2011.</br>Source: Sean Nelson. Data Source: USGS, StatsSA.</div>
+
+          We can see that there is a correlation between newly developed land and the racialization of space. Growth in Klerksdorp supported an influx of Black Africans, where
+          the spatial development to accommodate this population, was largely on the periphery of the town.  The sprawl and fragmentation development typology experienced by Klerksdorp
+          directly refutes the GSDF’s planning framework.
+          <br/><br/>
+
+          Using satellite images and Google Street View, we can look into the building typologies of the newly developed areas and the historic town, as well as, racialized spaces
+          identified in the census information.
+          <br/><br/>
+
+          <center><a id="example6" href="img/images/BT_Klerksdorp.png"><img class="img-fluid" width="100%" margin="auto" src="img/images/BT_Klerksdorp.png" alt="Case studies of predominantly black and white neighborhoods in Klerksdorp."/></a></center>
+          <div class="caption">Predominantly black (top row) and white (bottom row) neighborhoods in the town of Klerksdorp.</br>Source: Google Earth</div>
+
+          <div id = "third"></div>
+              <br><br><br>
+          <h5 id="third">Middelburg</h5>
+
+          <img src="img/images/Context_Middelburg.png" class="img-fluid" id="c4sr-embed" alt="Map of Middelburg">
+          <div class="caption">The town of Middelburg, 40 miles south of Johannesburg, and the surrounding mines.</br>Source: Sean Nelson. Data Source: USGS</div>
+
+          Middelburg is a farming and industrial town northeast of Johannesburg, and was founded by Voortrekkers in 1864.  During the Second Boer War, the British built a concentration camp in the town.  </a>With its dark history during the Second Boer War, existence in apartheid South Africa, and coal mining operations, Middelburg has a long history of hosting violence on the body. <div class="footnote">14</div> <br/><br/>
+
+          <center><a id="example6" href="img/images/Y_Middelburg.png"><img class="img-fluid" width="70%" margin="auto" src="img/images/Y_Middelburg.png" alt="Map indicating the urban expansion of Middelburg"/></a></center>
+          </br>
+          <div class="caption">A map of Middelburg. Yellow areas indicate land that was developed between 2001 and 2014.</br>Source: Sean Nelson. Data Source: USGS.</div>
+
+          The development of Middelburg does not display large peripheral additions as seen in Klerksdorp. There are two noticeable developments on the periphery,
+          one south and one north, that are also extensions of older extant urban environments. The largest area of residential development is adjacent to the town’s
+          core. Remote sensing also picks up the development of the coal mining industry, southwest of the town, that occurred between 2001 and 2011. Unsurprisingly,
+          most the new development occurred where the population growth occurred. The development also seems to be dispersed over sub places with varying racial breakdowns.
+          However, the sub places highlight the racialization of space, where a northern sub places have higher concentrations of Black Africans, central and southern areas
+          have higher concentration of a White population.
+          <br></br>
+
+          <center><a id="example6" href="img/images/Dem_Middelburg.png"><img class="img-fluid" width="100%" margin="auto" src="img/images/Dem_Middelburg.png" alt="Three maps indicating population growth in Middelburg"/></a></center>
+          <div class="caption">(From left to right) Total, Black, and White Population growth in Middelburg between 2001 and 2011.</br>Source: Sean Nelson. Data Source: USGS, StatsSA.</div>
+
+          Looking at the details provided by the satellite images and street view, we can see that there is an obvious difference between the new developments along racial
+          lines. I took two sub places that experienced development detected in the remote sensing process, and specified one with a high percentage of Black Africans, and
+          one with a high percentage of Whites. As you can see, the satellite displays a higher density, with less vegetation, differing building materials, and differing
+          building typology. Though this is not a holistic analysis of the new developments, there is a distinct stratification through this examination.
+
+
+          <center><a id="example6" href="img/images/BT_Middelburg.png"><img class="img-fluid" width="100%" margin="auto" src="img/images/BT_Middelburg.png" alt="Case studies of predominantly black and white neighborhoods in Middelburg"/></a></center>
+          <div class="caption">Predominantly black (top row) and white (bottom row) neighborhoods in the town of Middleburg.</br>Source: Google Earth</div>
+
+          <div id = "fourth"></div>
+              <br><br><br>
+
+           <h5 id="fourth">Sasolburg</h5>
+
+          <img src="img/images/Context_Sasolburg.png" class="img-fluid" id="c4sr-embed" alt="Map of Sasolburg">
+          <div class="caption">The town of Sasolburg, 80 miles northeast of Johannesburg, and the surrounding mines.</br>Source: Sean Nelson. Data Source: USGS</div>
+
+          Sasolburg is an industrial town located southwest of Johannesburg. The town was founded in 1954 as a residential development that housed the employees of
+          the Sasol refinery. Sasol operated to refine oil from coal production, due to a deficiency in petroleum reserves. During the embargo enacted upon the
+          apartheid state of South Africa, the government supported the refinery for oil production.  The very existence of the plant is an essential support of
+          the apartheid state, where the protracted production of oil from coal was more important than reviewing a humanitarian crisis.  It is also interesting
+          to note that the town was named after the energy and chemical company. This exposes the disposition of this infrastructural development of the town,
+          where there lies an (ostensibly) undisclosed political relevance in the infrastructure space.<div class="footnote">15</div>
+          <br/><br/>
+
+          <center><a id="example6" href="img/images/Y_Sasol.png"><img class="img-fluid" width="70%" margin="auto" src="img/images/Y_Sasol.png" alt="Map indicating the urban expansion of Sasolburg"/></a></center>
+          </br>
+          <div class="caption">Sasolburg. Landsat 8, 2014, Spectral Bands 432. USGS.</div>
+
+          Based on the remote sensing output, we can identify most urban development occurred on the southern periphery of the town, with minimal infill development
+          in the historic north. The development seemingly has occurred in areas where the sub place displays a population growth, but that correlation is not
+          extremely apparent. When overlaying the development over racial demographics, there doesn’t seem to be a specific relationship between development and
+          demographics. However, most development was in an area that does not contain census information.  We can see that this development is directly adjacent
+          sub places that contain high percentage of Black Africans. With this information, and that fact that the new development has occurred far from sub places
+          with large White populations, we can assume that the development occurred in an area with a high percentage of Black Africans.
+
+          <br></br>
+          <center><a id="example6" href="img/images/Dem_Sasolburg.png"><img class="img-fluid" width="100%" margin="auto" src="img/images/Dem_Sasolburg.png" alt="Three maps indicating population growth in Sasolburg"/></a></center>
+          <div class="caption">2001 and 2011 Census Data, StatsSA. Accessed via Adrian Frith.</div>
+
+          Looking at the satellite and street view images, we can see the contrast between new spaces and old paces.  The spatial layout, infrastructure materiality,
+          and housing typologies differ greatly.
+
+          <center><a id="example6" href="img/images/BT_Sasolburg.png"><img class="img-fluid" width="100%" margin="auto" src="img/images/BT_Sasolburg.png" alt="Case studies of predominantly black and white neighborhoods in Sasolburg"/></a></center>
+          <div class="caption">Predominantly black (top row) and white (bottom row) neighborhoods in the town of Sasolburg.</br>Source: Google Earth.</div>
+
+          <div id = "fifth"></div>
+              <br><br><br>
+          <h5>Biopolitical Development</h5><br/>
+
+          The materiality associated with the old and new areas detailed in the satellite images and street view scenes shows a contrast between the spatial politics
+          of peripheral mining town - new and old spaces, Black and White spaces. Mapping growth over layers of demographic characteristics, we can see
+          the new development is occurring in areas of population growth, specifically concentrations of Black South Africans. This information, along with the
+          knowledge of the expansion of industries in these towns, denotes a type of spatial expansion that is specific to the mobilization of a labor force.
+          Due to the insidious and abrasive effects of these industries on the bodies of the wage labor, we can assume that this apparatus of infrastructure
+          was specifically developed as biopower. The informality of the material used in new developments where large Black African populations reside is
+          commensurate with the perception of expendability of the worker and their exclusion from modernity.<div class="footnote">16</div>
+          <br/><br/>
+
+
+          <div class="mobile-warning">Please note: footnotes not visible on mobile.</div>
+          <a class="btn btn-default btn-block c4sr-button c4sr-big-button" href="../../index.html#caseStudies">Return to Student Projects</a>
+        </div>
+
+        <!-- Footnotes -->
+        <div class = "col-md-3">
+          <div class = "footnotes">
+            <!-- Footnote  1 -->
+            <div class = "footnote-ref footnote-ref-1">
+              <sup>1</sup>
+              <a href="http://www.sahistory.org.za/places/gauteng">SAHO - South African History Online</a>
+            </div>
+            <!-- Footnote 2 -->
+            <div class = "footnote-ref footnote-ref-2">
+              <sup>2</sup>
+              <a>Sassen, Saskia (2011). Cities in a world economy. Sage Publications.</a>
+            </div>
+            <!-- Footnote 3 -->
+            <div class = "footnote-ref footnote-ref-3">
+              <sup>3</sup>
+              <a>Murray, Martin J (2011).“Spatial Politics in the Precarious City” City of Extremes: The Spatial Politics of Johannesburg. Durham: Duke University Press</a>
+            </div>
+
+             <div class = "footnote-ref footnote-ref-4">
+              <sup>4</sup>
+              <a href="google.com">Harrison, Phil,Gotz,Graeme, Todes, Alison and Wray, Chris eds. (2014). “Changing Space, Changing City: Johannesburg after apartheid,” Witz University Press.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-5">
+              <sup>5</sup>
+              <a href="google.com">Foucault, Michel (1978). The History of Sexuality.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-6">
+              <sup>6</sup>
+              <a href="google.com">Harrison, Phil,Gotz,Graeme, Todes, Alison and Wray, Chris eds. (2014). “Changing Space, Changing City: Johannesburg after apartheid,” Witz University Press.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-7">
+              <sup>7</sup>
+              <a href="google.com">Fair and Mallows</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-8">
+              <sup>8</sup>
+              <a>Easterling, Keller. Extrastatecraft: The Power of Infrastructure Space. </a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-9">
+              <sup>9</sup>
+              <a href="google.com">Harrison, Phil,Gotz,Graeme, Todes, Alison and Wray, Chris eds. (2014). “Changing Space, Changing City: Johannesburg after apartheid,” Witz University Press.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-10">
+              <sup>10</sup>
+              <a href="google.com">Harrison, Phil,Gotz,Graeme, Todes, Alison and Wray, Chris eds. (2014). “Changing Space, Changing City: Johannesburg after apartheid,” Witz University Press.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-11">
+              <sup>11</sup>
+              <a href="google.com">Harrison, Phil,Gotz,Graeme, Todes, Alison and Wray, Chris eds. (2014). “Changing Space, Changing City: Johannesburg after apartheid,” Witz University Press.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-12">
+              <sup>12</sup>
+              <a href="http://www.klerksdorptrade.info/klerksdorp-history/#.WjSh31Q-dZ0">Klerksdorp History</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-13">
+              <sup>13</sup>
+              <a href="https://census2011.adrianfrith.com/">South African Census 2011.</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-14">
+              <sup>14</sup>
+              <a href="https://showme.co.za/middelburg/tourism/history-of-middelburg/">Middelburg Hisotry</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-15">
+              <sup>15</sup>
+              <a href="http://www.vaaltriangleinfo.co.za/history/overview/overview8.htm">Vaal Triangle</a>
+            </div>
+
+            <div class = "footnote-ref footnote-ref-16">
+              <sup>16</sup>
+              <a>Foucault, Michel (1978). The History of Sexuality.</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <footer class="footer c4sr-footer">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-3 c4sr-footer-id"><a href="http://c4sr.columbia.edu/" target="_blank">Center for Spatial Research<br/>Columbia University<br/></a><div class="cu-crown">
+                  <img src="img/cu-crown.jpg" />
+              </div></div>
+              <div class="col-md-3">Graduate School of Architecture,<br/>Planning and Preservation<br/>Schermerhorn Hall Extension #654<br/>1172 Amsterdam Avenue<br/>New York, NY 10027<br/>
+              </div>
+              <div class="col-md-3"><a class="active" href="mailto:info@c4sr.columbia.edu">info@c4sr.columbia.edu</a><br/>Tel +1 212 555 1212<br/>Fax +1 212 555 1213</div>
+              <div class="col-md-3"><a href="https://twitter.com/c4sr_columbia" target="_blank">Follow us on Twitter</a><br/><a href="mailto:c4sr-updates-join@lists.columbia.edu" target="_blank">Sign up for our Mailing List</a><br/></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var jQuery_3_2_1=$.noConflict(true);
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>

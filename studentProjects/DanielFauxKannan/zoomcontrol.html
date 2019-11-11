@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Display map navigation controls</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYmQyNTAwIiwiYSI6ImNqOWx5NnB6ZjRsdmsycW1xN3JqMHl0ZWYifQ.UztvvPGPRctKle6Ryaopvw';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/bd2500/cjafy11w97j3q2sqax53lhjsd',
+    center: [28.045415, -26.212738], // starting position
+    zoom: 9 // starting zoom
+});
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+</script>
+
+<script>
+map.on('load', function () {
+    // Add a layer showing the places.
+    map.addLayer({
+        "id": "places",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Egoli Consolidated West Wits</strong><p>Commodity:Gold, Operation Type: Surface-Underground, Status: Producer, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2010-11-12-rising-water-fear-sas-mining-legacy\" target=\"_blank\" title=\"Opens in a new window\">The water is quiet, smells slightly of vinegar and laps gently against a share devoid of any life</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.70975, -26.12991]
+                }
+            },{
+                "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Randfontein Mine Cooke Section</strong><p>Commodity:Gold Uranium, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1974, Discovery year: 1887</p><a href=\"https://mg.co.za/article/2014-07-17-one-mans-home-is-another-mans-uranium-dump\" target=\"_blank\" title=\"Opens in a new window\">The waste was dumped above ground in over 400 mine dumps or tailings dams that now dot the province</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.73478, -26.2466]
+                }
+             },{
+                "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Randfontein Section</strong><p>Commodity:Gold Silver, Operation Type: Unknown, Status: Unknown, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2014-07-17-one-mans-home-is-another-mans-uranium-dump\" target=\"_blank\" title=\"Opens in a new window\">The surface is a stark blue reflection of the sky, with the bottom tainted red from the heavy metals in the water. No alga grow here, no fish swim, no underwater life ripples the surface</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.71815, -26.1633]
+                 }
+            },{
+                "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Dreifontein Consolidated</strong><p>Commodity:Gold, Operation Type: Underground, Status: Plant, Names: Driefontein Consolidated, Driefontein East, Driefontein West, Driefontein North Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2012-07-01-five-miners-killed-in-fire-at-driefontein-mine\" target=\"_blank\" title=\"Opens in a new window\">Five miners killed in fire at Driefontein mine</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.45146, -26.3799]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Libanon Mine</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1949, Discovery year: 1932</p><a href=\"https://mg.co.za/article/2010-11-23-voices-of-acid-mine-drainage\" target=\"_blank\" title=\"Opens in a new window\">A dilapidated, unremediated mine dump is now home to a garbage dump where hundreds of poor South Africans and migrants eek out a living in an unimaginable environment</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.61816, -26.3633]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Grootvlei</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1938, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2016-09-09-00-aurora-zama-zamas-out-of-options-to-find-other-ways-to-make-a-living\" target=\"_blank\" title=\"Opens in a new window\">Dozens of them work, scattered across the yellow landscape, looking for a speck of gold that could tide them over the month. They run and hide at the slightest sighting of an outsider</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.43475, -26.2133]
+                       }
+             }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Blyvooruitzicht Mine</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1942, Discovery year: 1932</p><a href=\"https://mg.co.za/article/2013-11-14-defunct-mine-gets-up-towns-nose/\" target=\"_blank\" title=\"Opens in a new window\">'You should see the dust here on some days. We all have to wear masks,' he says. His daughter has a baby who has to remain at home with his wife because the dust would be too dangerous for her.'</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.38479, -26.3966]
+                       }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>CrownCity Deep/Cons. Main Reef Mines</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1887, Discovery year: 1887</p><a href=\"https://mg.co.za/article/2012-10-14-alarm-over-plan-to-pump-acid-mine-drainage-into-the-vaal\" target=\"_blank\" title=\"Opens in a new window\">'About 800km of empty mine tunnels and shafts beneath Johannesburg are filling up with acid mine water. This water is expected to reach the Gold Reef City theme park by June next year.'</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.01812, -26.2299]
+                       }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Kloof Mine</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1968, Discovery year: 1932</p><a href=\"https://mg.co.za/article/2007-12-06-miner-killed-at-kloof-gold-mine\" target=\"_blank\" title=\"Opens in a new window\">Further Tragedy in South African Mining Sector</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.60146, -26.3966]
+                       }
+             }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Benoni Recovery Plant</strong><p>Commodity:Gold, Operation Type: Surface, Status: Producer, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2014-02-16-hundreds-of-illegal-miners-trapped-underground\" target=\"_blank\" title=\"Opens in a new window\">Hundreds of Illegal Miners Trapped Underground</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.30145, -26.1966]
+                       }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Grootvlei Mines</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: Grootvlei Proprietary Mines, Year of First Production: 1938, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2012-05-11-illegal-miners-pick-away-at-dead-mines-1\" target=\"_blank\" title=\"Opens in a new window\">'The mines attract thousands illegal miners – known as zama zamas (Zulu for “those who try their luck”) – who descend into the ageing shafts and wells, sometimes living for months underground digging for nuggets of gold.'</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.50145, -26.2299]
+                       }
+             }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>South Deep Project</strong><p>Commodity:Gold, Operation Type: Underground, Status: Plant, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2010-02-05-dont-drink-the-water\" target=\"_blank\" title=\"Opens in a new window\">'They’ve ruined us here,' said Rheeder. ‘I wouldn’t be surprised if I myself have contracted lung cancer.'</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.65146, -26.4383]
+                       }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Vogelstruisbult</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: Vogelstruisbult Gold Mining Areas, Ltd., Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2016-11-30-00-geluksdal-bites-the-brakpan-tailing-dams-dust\" target=\"_blank\" title=\"Opens in a new window\">'Our people just see [the dust] as part of our life and we get on.''That means she takes her medication twice a day and tries her best to do what exercise she can with her breathing problems.'</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.46812, -26.3299]
+                       }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>East Dagga</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: East Daggafontein Mine, Ltd., Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2014-05-22-pipelines-pass-their-best-by-date\" target=\"_blank\" title=\"Opens in a new window\">Pipelines past their best-by-date</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.51256, -26.2883]
+                       }
+             }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>South Rooderpoort Mine</strong><p>Commodity:Gold, Operation Type: Unknown, Status: Producer, Names: N/A, Year of First Production: 1937, Discovery year: 1888</p><a href=\"https://mg.co.za/article/2012-12-14-00-citys-iconic-mine-dumps-are-a-health-risk-say-activists\" target=\"_blank\" title=\"Opens in a new window\">How do I know whats going on inside my body, or theirs? My mum died of asthma; my sister died of lung cancer – but of course, the doctor blamed it on her occupational environment</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.76812, -26.21328]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Blyvoorutizicht Operations</strong><p>Commodity:Gold and Uranium, Operation Type: Processing Plant, Status: N/A, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2013-12-05-desolation-in-the-land-of-plenty\" target=\"_blank\" title=\"Opens in a new window\">The town of Blyvooruitzicht is covered in dark-green grass dotted with patches of purple from the jacaranda trees. Nature is growing over the rusted remnants of mining, reclaiming the sludge pipes that run across the town from the slimes dams to the mines</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.38476, -26.4133]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Langlaagte Est.</strong><p>Commodity:Gold , Operation Type: N/A, Status: N/A, Names: Crown Mines Ltd, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://www.theguardian.com/cities/2015/jul/06/radioactive-city-how-johannesburgs-townships-are-paying-for-its-mining-past \" target=\"_blank\" title=\"Opens in a new window\">A few miles away, the township of Diepkloof in Soweto catches the run-off from several large tailings. A few hundred feet from residents front doors, a run-off has burst its banks</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.00146, -26.22577]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Langlaagte Mines Proprietary Ltd</strong><p>Commodity:Gold , Operation Type: Underground, Status: Producer, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2015-10-22-gold-rushs-toxic-legacy-lingers\" target=\"_blank\" title=\"Opens in a new window\">Unlined and unfenced streams run along the piles of mine waste, the liquid cocktail dyed flurescent blue or reddish-brown from the heavy metals and chemicals leaching off the dumps. During the windy season, dust from the dumps pelts residents</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.96395, -26.17991]
+                 }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Rose Deep Ltd</strong><p>Commodity:Gold , Operation Type: N/A, Status: Past Producer, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2005-03-17-rescuers-free-woman-from-mineshaft\" target=\"_blank\" title=\"Opens in a new window\">A 30-year-old woman who fell down a narrow mineshaft near the Marathon informal settlement in Primrose, Germiston, on Thursday was rescued just before 1pm</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.16812, -26.21327]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Durban Roodepoort Deep</strong><p>Commodity:Gold , Operation Type: Underground, Status:Producer, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/1997-09-19-mine-dust-blows-disease-at-school\" target=\"_blank\" title=\"Opens in a new window\">Lower primary school is often dismissed by 9am because learning is impossible when you cannot see much and even less, breathe</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [27.87145, -26.19661]
+                }
+            }, {
+            "type": "Feature",
+                    "properties": {
+                            "description": "<strong>Van Ryn Deep</strong><p>Commodity:Gold , Operation Type: N/A, Status:Producer, Names: N/A, Year of First Production: N/A, Discovery year: N/A</p><a href=\"https://mg.co.za/article/2014-02-16-hundreds-of-illegal-miners-trapped-underground\" target=\"_blank\" title=\"Opens in a new window\">emergency services had been conducting operations around illegal mining in the area on Sunday when they heard the screaming from the abandoned mine</a><iframe width='100%' height='394' scrolling='yes' frameborder='no' src=img/01_robinson_lake_hi-res-01-02.png></iframe>",
+      
+                    "icon": "circle"
+                    },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [28.35701, -26.16327]
+                }
+        }]
+    }
+},
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true
+        }
+    });
+
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on('click', 'places', function (e) {
+        new mapboxgl.Popup()
+            .setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(e.features[0].properties.description)
+            .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+    });
+});
+</script>
+
+</body>
+</html>

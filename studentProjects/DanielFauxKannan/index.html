@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Change to your project's title -->
+  <title>Mining Landscapes</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Fancybox P1-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+  <script type="text/javascript">
+  var jQuery_1_4_3
+  jQuery_1_4_3=$.noConflict(true);
+  </script>
+  <script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+  <script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- Site specific CSS -->
+  <link rel="stylesheet" href="css/csr-casestudy.css">
+  <link rel="stylesheet" href="css/footnotes.css">
+  <!-- Webfont CSS -->
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/c28915cb-7a1f-477c-9084-e9e755ede452.css">
+  <!-- Fancy Box P2 -->
+  <script type="text/javascript">
+  $(document).ready(function() {
+    /*
+    *   Examples - images
+    */
+
+    $("a#example1").fancybox();
+
+    $("a#example2").fancybox({
+      'overlayShow'	: false,
+      'transitionIn'	: 'elastic',
+      'transitionOut'	: 'elastic'
+    });
+
+    $("a#example3").fancybox({
+      'transitionIn'	: 'none',
+      'transitionOut'	: 'none'
+    });
+
+    $("a#example4").fancybox({
+      'opacity'		: true,
+      'overlayShow'	: false,
+      'transitionIn'	: 'elastic',
+      'transitionOut'	: 'none'
+    });
+
+    $("a#example5").fancybox();
+
+    $("a#example6").fancybox({
+      'titlePosition'		: 'outside',
+      'overlayColor'		: '#000',
+      'overlayOpacity'	: 0.9
+    });
+
+    $("a#example7").fancybox({
+      'titlePosition'	: 'inside'
+    });
+
+    $("a#example8").fancybox({
+      'titlePosition'	: 'over'
+    });
+
+    $("a[rel=example_group]").fancybox({
+      'transitionIn'		: 'none',
+      'transitionOut'		: 'none',
+      'titlePosition' 	: 'over',
+      'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+        return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+      }
+    });
+
+    /*
+    *   Examples - various
+    */
+
+    $("#various1").fancybox({
+      'titlePosition'		: 'inside',
+      'transitionIn'		: 'none',
+      'transitionOut'		: 'none'
+    });
+
+    $("#various2").fancybox();
+
+    $("#various3").fancybox({
+      'width'				: '75%',
+      'height'			: '75%',
+      'autoScale'			: false,
+      'transitionIn'		: 'none',
+      'transitionOut'		: 'none',
+      'type'				: 'iframe'
+    });
+
+    $("#various4").fancybox({
+      'padding'			: 0,
+      'autoScale'			: false,
+      'transitionIn'		: 'none',
+      'transitionOut'		: 'none'
+    });
+  });
+  </script>
+
+</head>
+<body>
+  <!-- Top navbar (do not change)-->
+  <nav class = "navbar fixed-top c4sr-navbar" role="navigation" id="c4sr-navbar">
+    <div class="container-fluid" id="c4sr-titlemobile">
+      <div class="c4sr-menu-left">
+        <a class = "navbar-link" href="../../index.html">Conflict Urbanism: InfraPolitics</a>
+      </div>
+      <div class ="c4sr-menu-right">
+        <a class = "navbar-link" href="../../index.html">About</a>
+        <a class = "navbar-link" href="../../index.html#caseStudies">Projects</a>
+        <a class = "navbar-link" href="../../index.html#people">People</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Main content -->
+  <div class="container-fluid">
+    <div class="c4sr-contentwrapper">
+      <div class ="row" id="top-row">
+        <div class ="col-md-12" >
+          <!-- Your project title -->
+          <h2>The Psychogeography of the City of Gold: The Lives and Afterlives of Mining</h4>
+            <!-- Your name, degree program and school -->
+            <div class="caption">Betsy Daniel, Chloé Faux , Niharaka Kannan</div>
+          </div>
+        </div>
+        <!-- Side navigation menu -->
+        <div class = "row">
+          <div class = "col-md-3">
+            <div class ="nav" id="legend">
+              <ul class = "c4sr-sidenav">
+                <!-- Make as many sections as fit your project  -->
+                <!-- Change the href to match the associated h5 id tag -->
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#first">The Smoldering Violences</a></li>
+                <li><a href="#second">Contamination</a></li>
+                <li><a href="#third">Money-Waste-Money</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <script>
+          window.onscroll = function() {myFunction()};
+          var lnd = document.getElementById("legend");
+          var sticky = lnd.offsetTop;
+
+          function myFunction() {
+            if (window.pageYOffset >= 169){
+              $(document).ready(function(){
+                $('#legend').attr('id', 'sticky-menu')
+              });
+            }
+            if (window.pageYOffset < 169){
+              $(document).ready(function(){
+                $('#sticky-menu').attr('id', 'legend')
+              }
+            )}
+          }
+          </script>
+
+          <!-- Section for the text and images for your project -->
+          <div class = "col-md-6 body-text">
+            <!-- create your own id tag that matches the href you create in the sidenav section-->
+            <!-- embeded image -->
+            <img src="img/Pscho-geog_final.jpg" class="img-fluid" id="c4sr-embed">
+            <!-- image caption -->
+            <div class="caption">The Psychogeography Map of Johannesburg<br/>
+              Source: Daniel, Faux & Kannan </div>
+
+              <div id = "intro"></div>
+              <br><br><br>
+
+              <h5>Introduction</h5><br/>
+              <center><i>"It’s not that what is past casts its light on what is present, or what is present its light on what is past, rather, image is that wherein what has been comes together in a flash with the now to form a constellation. In other words, image is dialectics at a standstill. For while the relation of the present to the past is a purely temporal, continuous one, the relation of what-has-been to the now is dialectical: is not progression but image, suddenly emergent."</i> <br/>Walter Benjamin, The Arcades Project<div class="footnote">1</div></p></center>
+              The mine dumps across Johannesburg, South Africa, of which there are thousands, bear testimony to the lives and afterlives of mining. The slag heaps index the 1886 discovery gold on the  Witwatersrand, the ensuing gold rush, industrialization, the infrastructure of apartheid, where the black body was at once the source of necessary labor and surplus, and de-industrialization that marks the political present.
+              <br></br>
+              The physical landscape of Johannesburg, bisected by the gold reef lays bare a psycho-geography that stages a division of labor haunted by apartheid: the gold reef which measures more than 56 km separates the northern, more affluent (and more white) suburbs of Johannesburg — where wealth and capital are concentrated — from the more impoverished (black) South, the site from which labor is extracted. “The relations of production” — the totality of  relations and bounds people are obligated to enter into for their survival — are put in relief by the mines and the slag heaps.  Indeed, as Marx tells us, these social relationships are involuntary and they structure society’s economic base. The mine dumps—as much as the mines themselves — have shaped and continue to shape  the ecological and sociopolitical landscape of the City of Gold, where the racial divide remains despite the promises of 1994. Robert Meister’s assertion that the Truth and Reconciliation Commission “reflects a post-revolutionary conception of justice as something other than a first step toward redistributing the illegitimate gains of past oppression”<div class="footnote">2</div> is important, for the mine dumps themselves bear testimony to another broken promise of 1994: the South African gold mines were never nationalized.
+
+              <div id = "first"></div>
+              <br><br><br>
+
+              <h5>The Smoldering Violences</h5>
+              <br/>
+              <center><i>"The long dyings—the staggered and staggeringly discounted casualties, both human and ecological—are often not just incremental but exponential, operating as major threat multipliers. They can spur long-term, proliferating conflicts that arise from desperation as the conditions for sustaining life are degraded in ways that the corporate media seldom discuss."</i><br/>Rob Nixon, Slow Violence <div class="footnote">3</div></center><br/>
+
+
+              The task of historical materialism, wrote Walter Benjamin is to seize “that image of the past which unexpectedly appears to the historical subject in a moment of danger. The danger threatens both the content of the tradition and those who inherit it”(Benjamin 1940: 391).<div class="footnote">4</div> But how to find words to narrate a violence that is incremental and unspectacular spectacular which is to say a ‘crisis’ that is not afforded the status of ‘crisis’ for it is smoldering rather than sudden? Indeed, the question becomes, can the minor event arrest—the danger not a moment but an accumulation, its effects “pervasive but elusive.”<div class="footnote">5</div>
+
+              <br/><br/>
+              <!-- Image Gallery 1 -->
+              <p>
+                <center>
+                  <a class="fancybox" rel="example_group" title="View from the top of a mine dump onto the informal settlement, Jerusalem. DRDGold owns this dump and wants to move the residents and reclaim the gold remaining in the sand. Location: Off Witt Deep Roadm Delmore, Boksburg" href="img/jasonlarkin15.jpg"><img alt="Jason Larkin Photo: Informal Settlement Adjacent to Mine Dump" width=30% height=30% src="img/jasonlarkin15.jpg">
+                  </a>
+                  <a class="fancybox" rel="example_group" title="Silvester 42, and Todd, 21, have been fasting under this makeshift shelter on top of a mine dump for four days. The two men live in Soweto and come to the dump once a year to fast and pray. Location: Off Harry Street, West Turffontein, Johannesburg" href="img/jasonlarkin17.jpg"><img alt="Jason Larkin Photo: Mean Pray in Mine Dump" width=30% height=30% src="img/jasonlarkin17.jpg">
+                  </a>
+                  <a class="fancybox" rel="example_group" title="New Affordable housing constructed in front of a mine dump that is being reprocessed for gold. Many commercial and residential developments are near, or on, old mining sites containing hazardous waste. Location: Aalwyn Road, Riverlea, Johannesburg." href="img/jasonlarkin3.jpg"><img alt="Jason Larkin Photo: Affordable Housing Adjacent to Mine Dump" width=30% height=30% src="img/jasonlarkin3.jpg">
+                  </a></center>
+                </p>
+
+                <div class="caption">Image One: View from the top of a mine dump onto the informal settlement, Jerusalem. DRDGold owns this dump and wants to move the residents and reclaim the gold remaining in the sand. <br/>
+                  Location: Off Witt Deep Roadm Delmore, Boksburg
+                  <br/><br/>Image Two: Silvester 42, and Todd, 21, have been fasting under this makeshift shelter on top of a mine dump for four days. The two men live in Soweto and come to the dump once a year to fast and pray. <br/> Location: Off Harry Street, West Turffontein, Johannesburg
+                  <br/><br/>Image Three: New Affordable housing constructed in front of a mine dump that is being reprocessed for gold. Many commercial and residential developments are near, or on, old mining sites containing hazardous waste. <br/> Location: Aalwyn Road, Riverlea, Johannesburg.
+                  <br/><br/>
+                  Source: "Tales From the City of Gold" by Jason Larkin</div><br/>
+
+                  Eerily beautiful, the. mine dumps are nonetheless vectors of toxicity. Acid mine drainage pollutes water indefinitely;  Uranium seeps into the ground; while silicosis, the result of inhaling silica dust underground killed innumerable miners, dust particles from dumps saturate the air; those who live in settlements constructed on and around mine dumps bemoan a disturbing constellation of ailments ranging from birth defects to skin irritations to lung problems.<div class="footnote">6</div>
+
+                  <div id = "second"></div>
+                  <br><br><br>
+
+                  <h5>Contamination: On Seeing and Detecting</h5>
+                  <br/>
+                  <center><i>“Racism, specifically, is the state-sanctioned or extralegal production and exploitation of group-differentiated vulnerability to premature death.”</i>
+                    <br/>Ruth Wilson Gilmore, Golden Gulag<div class="footnote">7</div></center><br/>
+
+                    <center><i>“The trees are full of dust, the grass is full of dust. It will have to rain a lot for the grass to be washed, for the leaves to be washed. It has become the life people are living here: they are living in dust every day.”</i>
+                      <br/>Gednezar Dladla, Dust, TB and HIV<div class="footnote">8</div></center><br/>
+
+                      As a practice of visualization, mapping, has the ability to stage the paradox of what Rob Nixon calls “the long-term emergency"  “long dyings—the staggered and staggeringly discounted casualties, both human and ecological—that are underrepresented in strategic planning and official memory.”<div class="footnote">9</div> How a map is rendered, its resolution and color, for example, forces us to ask, what does it mean to see, and how does it differ from detecting? What is sensed in the form of asthma, tuberculosis, further comprise of an immune system already compromised by HIV—  but not necessarily seen right away, since they result from an accumulation rather than a singular event?
+
+
+                      <!-- Embedded map or other item -->
+                      <!-- the src value could be to an html file you write -->
+
+                      <br></br>
+                      On Seeing
+                      <br></br>
+                      High-resolution imagery from Google Earth, sourced from NASA and the U.S. Geological Survey’s (USGS) Landsat mimics how we “see” the earth <div class="footnote">10</div>. The pixel resolution varies from place to place. Google buys satellite images from SPOT Satellite (and other companies) to get more high res. Therefore when you zoom into a place, the resolution is improved compared to the Landsat 8 imagery. The pixel size or spatial resolution for SPOT can get up to 2.5 meters by 2.5 meters.<div class="footnote">11</div>
+                      <br></br>
+                      On Detecting
+                      <br></br>
+                      Low-resolution Landsat imagery, a “continuously acquired collection of space-based moderate-resolution land remote sensing data”<div class="footnote">12</div> allows for the detection of phenomena that would ordinarily go unseen. Remote sensing is predominantly used in order to map environmental changes which includes but is not limited to fertile agricultural land, geological formations and mineral compositions of soil. The rendering of Landsat imagery can be either be natural or standard false color:
+                      <br></br>
+                      <center><i>“Each pixel designates 20 square meters—just over 215 square feet. Each one has an address, expressed in longitude and latitude, corresponding to a unique territory on the face of the Earth. And each one has a signature, the heat value of that place at the time the satellite passed silently above. That value is expressed as a number, which in turn has an assigned standard false color. The satellite gathers data— we see an image.”</i><br/>Laura Kurgen, Close Up at a Distance<div class="footnote">13</div></center><br/>
+
+                      What emerges from low-resolution imagery in standard-false color is the possibility to detect contamination, whose sociopolitical implications are wide-ranging. Standard false color is a form of language that allows us to detect that which we cannot immediately see.
+                      <br/>
+
+                      <div class="embed-responsive embed-responsive-4by3">
+                        <iframe frameborder="0" class="juxtapose" width="100%" height="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=9c098256-d252-11e7-b263-0edaf8f81e27" scrolling="no" allowfullscreen class="img-fluid" id="c4sr-embed"></iframe>
+                      </div>
+
+                      <!-- <img src="img/testimage.png" class="img-fluid" id="c4sr-img"> -->
+
+                      <div class="caption">The first image in the slider uses Landsat Combination 432. The second image in the slider uses Landsat Combination 753. <p></p><strong>Landsat Combination 432</strong><p></p>The use of natural colors in this image allow for it to be understood or decoded intuitively; brown is earth and vegetation is green.<p></p><strong> Landsat Combination 753</strong><p></p>This is an image rendered in standard false color, which defies being read intuitively. Healthy vegetation is bright green; grasslands will appear ‘normal green’; pink areas represent barren soil; oranges and browns represent sparsely vegetated areas; dry vegetation is orange; water is blue; sands, soils and minerals will appear as a multitude of colors.  Here, cities and building blocks are ‘rendered out’ in order to render more perceptive urban and ecological changes. In the areas where mine dumps are located, it is likely that the blue represents acid mine drainage<p></p> Source: USGS (United States Geological Survey) Landsat The Landsat Image Description:are taken at Path:170 Row:78 and Path: 171 and Row:78 Landsat 8 OLI/TIRS C1 Level-1
+                      </div>
+                      <br/><br/>
+
+                      <!-- Image Gallery 2 -->
+                      <p>
+                        <center>
+                          <a class="fancybox" rel="example_group" title="The remains of Dump 20 that is being reclaimed by Gold 1. Once listed in The Guiness Book of Records as the largest man made heap in the world, it took nearly 60 years to create and contained 20 million tons of mining waste. It will take seven years in total to reclaim. Location: Off Tweelopies Road, near Main Reef Road Randfontein" href="img/jasonlarkin20.jpg"><img alt="Jason Larkin Photo: Remains of Dump 20" width=30% height=30% src="img/jasonlarkin20.jpg">
+                          </a>
+                          <a class="fancybox" rel="example_group" title="This unlined pit between mine dumps is the receptor pit for neutralised acid mine drainage. Even after neutralisation, this every grrowing sludge and water mix has elevated levels of heavy metals like uranium, manganese, aluminium, lead, copped and cobalt. Location: Tweelopies Road, near Main Reef Road Randfontein." href="img/jasonlarkin7.jpg"><img alt="Jason Larkin Photo: Unlined pit between mine dumps" width=30% height=30% src="img/jasonlarkin7.jpg">
+                          </a>
+                          <a class="fancybox" rel="example_group" title="Nicolle Madrice, 36, prays before collecting water from a stream heavily polluted by a mine dump owned by ERMP. Nicolle, a member of an African Independent Church, is encouraged by his church to collect fresh water daily for drinking, cooking and washing. Location: Near Leeba Street, Meadowlands East, Soweto." href="img/jasonlarkin34.jpg"><img alt="Jason Larkin Photo: Man prays by polluted water near a mine dump" width=30% height=30% src="img/jasonlarkin34.jpg">
+                          </a></center>
+                        </p>
+
+                        <div class="caption">Image Four: The remains of Dump 20 that is being reclaimed by Gold 1. Once listed in The Guiness Book of Records as the largest man made heap in the world, it took nearly 60 years to create and contained 20 million tons of mining waste. It will take seven years in total to reclaim. <br/> Location: Off Tweelopies Road, near Main Reef Road Randfontein<br/><br/>
+                          Image Five: This unlined pit between mine dumps is the receptor pit for neutralised acid mine drainage. Even after neutralisation, this every grrowing sludge and water mix has elevated levels of heavy metals like uranium, manganese, aluminium, lead, copped and cobalt. <br/> Location: Tweelopies Road, near Main Reef Road Randfontein. <br/><br/>
+                          Image Six: Nicolle Madrice, 36, prays before collecting water from a stream heavily polluted by a mine dump owned by ERMP. Nicolle, a member of an African Independent Church, is encouraged by his church to collect fresh water daily for drinking, cooking and washing. <br/> Location: Near Leeba Street, Meadowlands East, Soweto.
+                          <br/><br/>
+                          Source: "Tales From the City of Gold" by Jason Larkin</div><br/>
+
+                          <div class="embed-responsive embed-responsive-4by3">
+                            <iframe class="embed-responsive-item" id="c4sr-embed"
+                            src="popupmap.html" allowfullscreen>
+                          </iframe></div>
+
+                          <div class="caption">Click on marker for details on mines and related articles. Blue items represents pollution and environmental effects. Pink items represents illegal mining and mining related crimes. Yellow items represent dust pollution. Map best viewed full screen. </div>
+
+
+
+
+                          <div id = "third"></div>
+                          <br><br><br>
+
+                          <h5>Money-Waste-Money</h5>
+                          <center><i>“Foundational to the capitalism that built Johannesburg was the belief that black labor pertained to the domains of both need and use. Native life, in turn, was both indispensable and expendable. Because native life was seen as excessive and naturally doomed to self-destruction, it constituted wealth that could be lavishly spent.”</i><br/>
+                            Achille Mbembe, Public Culture<div class="footnote">14</div></center><br/>
+
+                            Mines are haunted by their finitude, which is to say their eventual depletion. Until 2006, South Africa was  largest producer of gold in the world. As of 2016 South African’s Department of Mineral Resources has identified thousands of mines deemed ‘derelict and ownerless’. According to the Chamber of Mines of South Africa, 562,000 times more waste than gold was produced in 2013.<div class="footnote">15</div> In their “Mining Indaba” report of  February of 2017, the Chamber of Mines predicts the imminent demise of mining:
+                            <br></br>
+                            "Looked at as a whole, with conventional mining [alongside full-mechanized mining], the industry can look forward to a sharp decline in gold production by 2019-20 and for mining to die out almost completely by 2033."<div class="footnote">16</div>
+                            <br></br>
+                            Once considered the detritus of a lucrative gold mining industry, in the age of global capital, finance capital, and speculation, the mine dumps have emerged as a source of profit. Advances in technology mean that dust can has the potential to be re-mined for precious metals.  Vinay Gidwani and Rajyashree N. Reddy “contend that “waste” is the political other of capitalist “value”<div class="footnote">17</div>, but in the case of the slag heap, forged is a relationship between surplus-value and waste, where the latter has transformed into the former, at least partially,  with the passage of time.  Indeed, extracted  from a portion of the waste is use-value, which is what drives capitalist production’s drive to accumulate, which is to say generate surplus value. This transformation is mediated by what Achille Mbembe calls “superfluity”, which speaks to “to the dialectics of indispensability and expendability of both labor and life, people and things”.<div class="footnote">18</div> Ironically, risk—the neoliberal calculus of people over profit, has the potential to alleviate environmental dangers. Here,  Rosalind Morris’ differentiation between danger and risk is useful. use[s]the term ‘danger…appl[ies] to the actual events afflicting people, and the term risk to its representation in terms of calculable and incalculable probabilities.”<div class="footnote">19</div>
+
+                            <!-- Image Gallery 2 -->
+                            <p>
+                              <center>
+                                <a class="fancybox" rel="example_group" title="High-powered water canons are started in preparation for reclamation of a mine dump. About 30 bars of pressure we needed to break up and turn the sand into slurry, which is then transported to the processing plant where gold content is extracted. It will take four years to reclaim the remaining 4.5 million tons of sand. Location: Viscount Road, near Main Reef Road, Randfontein." href="img/jasonlarkin12.jpg"><img alt="Jason Larkin Photo: Slurry" width=30% height=30% src="img/jasonlarkin12.jpg">
+                                </a>
+                                <a class="fancybox" rel="example_group" title="Trucks transport sand from Dump 20, once one of the largest in the world, to trains that deliver the sand to the processing plant four kilometres away where any remaining gold is extracted. Gold 1 has been reclaiming the dump for six years, and has removed 17 million tons of waste. Rehabilitation of the land, earmarked for public open space, is scheduled to begin in 2018. Source: Off Tweelopies Road, near Main Reef Road Randfontein" href="img/jasonlarkin31.jpg"><img alt="Jason Larkin Photo: Mine Dump" width=30% height=30% src="img/jasonlarkin31.jpg">
+                                </a>
+                                <a class="fancybox" rel="example_group" title="Admi, 38, collects material from a municipal rubbish dump to sell to scrap and recycling businesses, averaging a daily income of R150. Rubbish dumps like this on top of old mine dumps were sold or rented to the municipality many years ago by mining companies. Source: Turffontein Road exit, Booysens, Johannesburg" href="img/jasonlarkin6.jpg"><img alt="Jason Larkin Photo: Municipal Rubbish Dump" width=30% height=30% src="img/jasonlarkin6.jpg">
+                                </a></center>
+                              </p>
+
+                              <div class="caption">Image Seven: High-powered water canons are started in preparation for reclamation of a mine dump. About 30 bars of pressure we needed to break up and turn the sand into slurry, which is then transported to the processing plant where gold content is extracted. It will take four years to reclaim the remaining 4.5 million tons of sand. <br/>Location: Viscount Road, near Main Reef Road, Randfontein.
+                                <br/><br/>Image Eight: Trucks transport sand from Dump 20, once one of the largest in the world, to trains that deliver the sand to the processing plant four kilometres away where any remaining gold is extracted. Gold 1 has been reclaiming the dump for six years, and has removed 17 million tons of waste. Rehabilitation of the land, earmarked for public open space, is scheduled to begin in 2018. <br/>Source: Off Tweelopies Road, near Main Reef Road Randfontein
+                                <br/><br/>Image Nine: Admi, 38, collects material from a municipal rubbish dump to sell to scrap and recycling businesses, averaging a daily income of R150. Rubbish dumps like this on top of old mine dumps were sold or rented to the municipality many years ago by mining companies. <br/>Source: Turffontein Road exit, Booysens, Johannesburg<br/><br/>
+                                Source: "Tales From the City of Gold" by Jason Larkin</div>
+                                <br/><br/>
+                                <div class="mobile-warning">Please note: footnotes not visible on mobile.</div>
+                                <a class="btn btn-default btn-block c4sr-button c4sr-big-button" href="../../index.html#caseStudies">Return to Student Projects</a>
+                              </div>
+
+                              <!-- Footnotes -->
+                              <div class = "col-md-3">
+                                <div class = "footnotes">
+                                  <!-- Footnote  1 -->
+                                  <div class = "footnote-ref footnote-ref-1">
+                                    <sup>1</sup>
+                                    <a href="google.com">Benjamin, Walter, “Convolute N,” in The Arcades Project. Cambridge, MA: Harvard University Press. [1972]1999,pp.456-488. [N2a,3]</a>
+                                  </div>
+                                  <!-- Footnote 2 -->
+                                  <div class = "footnote-ref footnote-ref-2">
+                                    <sup>2</sup>
+                                    <a href="google.com">Meister, Robert. After Evil: A Politics of Human Rights. New York, NY: Columbia University Press, 2011.p. 56</a>
+                                  </div>
+                                  <!-- Footnote 3 -->
+                                  <div class = "footnote-ref footnote-ref-3">
+                                    <sup>3</sup>
+                                    <a href="google.com">Nixon,Rob. "Slow Violence." The Chronicles of Higher Education. Accessed November 20, 2017. https://www.chronicle.com/article/Slow-Violence/127968.</a>
+                                  </div>
+                                  <!-- Footnote 4 -->
+                                  <div class = "footnote-ref footnote-ref-4">
+                                    <sup>4</sup>
+                                    <a href="google.com">Benjamin, Walter, “On the Concept of History,” translated by Harry Zohn. In Walter Benjamin: Selected Writings. Vol. 4, 1938–1940, edited by Howard Eiland and Michael W. Jennings, trans. Harry Zohn, 389–401.</a>
+                                  </div>
+                                  <!-- Footnote 5 -->
+                                  <div class = "footnote-ref footnote-ref-5">
+                                    <sup>5</sup>
+                                    <a href="google.com">Nixon,Rob. "Slow Violence." The Chronicles of Higher Education. Accessed November 20, 2017. https://www.chronicle.com/article/Slow-Violence/127968.</a>
+                                  </div>
+                                  <!-- Footnote 6 -->
+                                  <div class = "footnote-ref footnote-ref-6">
+                                    <sup>6</sup>
+                                    <a href="google.com">Kardas-Nelson, Mara. "Jason Larkin: Up and down in the dumps." The MG Online. Accessed November 20, 2017. https://mg.co.za/article/2013-07-05-jason-larkin-up-and-down-in-the-dumps.</a>
+                                  </div>
+                                  <!-- Footnote 7 -->
+                                  <div class = "footnote-ref footnote-ref-7">
+                                    <sup>7</sup>
+                                    <a href="google.com">Gilmore, Ruth Wilson. Golden Gulag: Prisons, Surplus, Crisis, and Opposition in Globalizing California. Berkeley, CA: University of California Press, 2007.</a>
+                                  </div>
+                                  <!-- Footnote 8 -->
+                                  <div class = "footnote-ref footnote-ref-8">
+                                    <sup>8</sup>
+                                    <a href="google.com">Smith, David, and Damian Carrington. "Dust, TB and HIV: the ugly face of mining in South Africa." The Guardian. May 26, 2015. Accessed November 20, 2017. https://www.theguardian.com/environment/2015/may/26/dust-tb-hiv-ugly-face-mining-south-africa.</a>
+                                  </div>
+                                  <!-- Footnote 9 -->
+                                  <div class = "footnote-ref footnote-ref-9">
+                                    <sup>9</sup>
+                                    <a href="google.com">Nixon, Rob. "Slow Violence." The Chronicles of Higher Education. Accessed November 20, 2017. https://www.chronicle.com/article/Slow-Violence/127968.</a>
+                                  </div>
+                                  <!-- Footnote 10 -->
+                                  <div class = "footnote-ref footnote-ref-10">
+                                    <sup>10</sup>
+                                    <a href="google.com">https://techcrunch.com/2016/06/27/google-earth-and-maps-get-sharper-satellite-imagery-with-new-update/</a>
+                                  </div>
+                                  <!-- Footnote 11 -->
+                                  <div class = "footnote-ref footnote-ref-11">
+                                    <sup>11</sup>
+                                    <a href="google.com">http://eoedu.belspo.be/en/satellites/spot.htm</a>
+                                  </div>
+                                  <!-- Footnote 12 -->
+                                  <div class = "footnote-ref footnote-ref-12">
+                                    <sup>12</sup>
+                                    <a href="google.com">https://landsat.usgs.gov/landsat-project-description</a>
+                                  </div>
+                                  <!-- Footnote 13 -->
+                                  <div class = "footnote-ref footnote-ref-13">
+                                    <sup>13</sup>
+                                    <a href="google.com">Kurgan, Laura. Close Up at a Distance: Mapping, Technology, and Politics. Brooklyn, NY: Zone Books, 2013. p.117-118</a>
+                                  </div>
+                                  <!-- Footnote 14 -->
+                                  <div class = "footnote-ref footnote-ref-14">
+                                    <sup>14</sup>
+                                    <a href="google.com">Mbembe; Aesthetics of Superfluity. Public Culture 1 September 2004; 16 (3): 373–405, p. 2004</a>
+                                  </div>
+                                  <!-- Footnote 15 -->
+                                  <div class = "footnote-ref footnote-ref-15">
+                                    <sup>15</sup>
+                                    <a href="google.com">Olalde, Mark. "The Haunting Legacy of South Africa’s Gold Mines." Yale E360. Accessed November 20, 2017. http://e360.yale.edu/features/the_haunting_legacy_of_south_africas_gold_mines.</a>
+                                  </div>
+                                  <!-- Footnote 16 -->
+                                  <div class = "footnote-ref footnote-ref-16">
+                                    <sup>16</sup>
+                                    <a href="google.com">Chamber of Mines South Africa. http://www.chamberofmines.org.za/component/jdownloads/send/6-presentations/400-media-briefing-by-the-chamber-of-mines-a-glimpse-at-the-future-technology-as-a-catalyst-for-sustainability-and-growth-of-the-sa-mining-industry</a>
+                                  </div>
+                                  <!-- Footnote 17 -->
+                                  <div class = "footnote-ref footnote-ref-17">
+                                    <sup>17</sup>
+                                    <a href="google.com">Gidwani, Vinay, and Rajyashree N. Reddy. "The Afterlives of “Waste”: Notes from India for a Minor History of Capitalist Surplus." Antipode 43, no. 5 (November 2011): 1625-58.</a>
+                                  </div>
+                                  <!-- Footnote 18 -->
+                                  <div class = "footnote-ref footnote-ref-18">
+                                    <sup>18</sup>
+                                    <a href="google.com">Mbembe; Aesthetics of Superfluity. Public Culture 1 September 2004; 16 (3): 373–405, p. 374.</a>
+                                  </div>
+                                  <!-- Footnote 19 -->
+                                  <div class = "footnote-ref footnote-ref-19">
+                                    <sup>19</sup>
+                                    <a href="google.com">‘Morris, Rosalind C. Rush/Panic/Rush: Speculations on the Value of Life and Death in South Africa’s Age of Epidemic,’ Public Culture. 20:2 (2008):199-231. P. 206</a>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <footer class="footer c4sr-footer">
+                                <div class="container-fluid">
+                                  <div class="row">
+                                    <div class="col-md-3 c4sr-footer-id"><a href="http://c4sr.columbia.edu/" target="_blank">Center for Spatial Research<br/>Columbia University<br/></a><div class="cu-crown">
+                                      <img src="img/cu-crown.jpg" />
+                                    </div></div>
+                                    <div class="col-md-3">Graduate School of Architecture,<br/>Planning and Preservation<br/>Schermerhorn Hall Extension #654<br/>1172 Amsterdam Avenue<br/>New York, NY 10027<br/>
+                                    </div>
+                                    <div class="col-md-3"><a class="active" href="mailto:info@c4sr.columbia.edu">info@c4sr.columbia.edu</a><br/>Tel +1 212 555 1212<br/>Fax +1 212 555 1213</div>
+                                    <div class="col-md-3"><a href="https://twitter.com/c4sr_columbia" target="_blank">Follow us on Twitter</a><br/><a href="mailto:c4sr-updates-join@lists.columbia.edu" target="_blank">Sign up for our Mailing List</a><br/></div>
+                                  </div>
+                                </div>
+                              </footer>
+                            </div>
+                          </div>
+
+                          <!-- Optional JavaScript -->
+                          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                          <!-- Fancybox -->
+                          <script type="text/javascript">
+                          var jQuery_3_2_1=$.noConflict(true);
+                          </script>
+
+
+                          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+                          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+                        </body>
+                        </html>

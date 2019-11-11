@@ -1,0 +1,15 @@
+/* to place your footnotes near where you cite them in the text */
+/* change the number of pixels.*/
+
+/* create as many footnote references as you use in your project*/
+
+/* make the number of the footnote match with the associated*/
+/* footnote in your project's text*/
+
+.footnote-ref-1{
+  top: 200px;
+}
+
+.footnote-ref-2{
+  top: 1000px;
+}

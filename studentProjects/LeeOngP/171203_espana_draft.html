@@ -1,0 +1,767 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Parque Biblioteca Espana Network</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        
+        body { margin:0; padding:0; }
+        
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+
+        .marker {
+            background-image: url('https://preview.ibb.co/jzdqXw/PBespana_Intervencion.jpg');
+            background-size: cover;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            cursor: pointer;
+            }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+            }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            }
+
+    </style>
+
+</head>
+
+<body>
+
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 18px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+
+</style>
+
+<div id='map'></div>
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFsZWViYiIsImEiOiJjamY0Z3k0NmYxMjNuMndtcTBxdjFuamZmIn0.NvrjhzfT8_-jLX8IF6KVHQ';
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-75.54417995311897, 6.294680726284298],
+    zoom: 13
+});
+
+var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-75.54417995311897, 6.294680726284298]
+    },
+    properties: {
+      title: 'Parque Biblioteca Network',
+      description: '<h2>Parque Biblioteca España</h2><p>The most prominent of the Parque Biblioteca projects, <a href=\"http://bibliotecasmedellin.gov.co/parque-biblioteca-espana-santo-domingo\" target=\"_blank\" title=\"Opens in a new window\">Parque Biblioteca España</a> (PBE) was completed in 2007, by architect Giancarlo Mazzanti, located in the Santo Domingo neighborhood of Comuna 1.</p>'
+    }
+  }
+  ]
+};
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .addTo(map);
+
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+  .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+  .addTo(map);
+
+});
+
+map.on('load', function () {
+    // Add a layer showing the library events.
+    map.addLayer({
+        "id": "places",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Biblioteca Granizal</h2><p>A neighborhood library, they host the PBE's Children's Reading Club on Saturdays at 9am every week.</p>",
+                        "icon": "library"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.544834, 6.292311]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Casa Piedra en el Camino</h2><p>The PBE's Youth Reading Club is held here on Fridays at 4pm every week.</p>",
+                        "icon": "triangle"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.567063, 6.252963]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Cadezo</h2><p>Vaiven City, a laboratory teaching and exploring digital literacy, is held here  on Tuesdays and Fridays at 10am weekly.</p>",
+                        "icon": "square"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.542343, 6.293341]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Mirador</h2><p>The Picnic for the Neighborhood, an event where the community gets together to learn about  the library system and book care, is held here on Wednesdays at 2pm every week. The Mobile Book, a mobile library system, is also set up here at 11am on Wednesdays.</p>",
+                        "icon": "square"
+                        
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.53884, 6.298367]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>UVA de la Esperanza</h2><p>The Picnic for the Neighborhood, an event where the community gets together to learn about  the library system and book care, is held here on Saturdays at 2pm every week. The Mobile Book, a mobile library system, is also set up here at 10am on Saturdays.</p>",
+                        "icon": "square"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.545044,6.286797]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Barrio Carpinelo I</h2><p>An exchange group focusing on children's rights and enjoyment of literature meets in the neighborhood on Wednesdays at 10am fortnightly.</p>",
+                        "icon": "triangle"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.539864,6.291569]
+                    }
+                },{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Cancha Maria Cano  Carambolas</h2><p>An exchange group focusing on children's rights and enjoyment of literature meets in the neighborhood on Saturdays at 10am fortnightly.</p>",
+                        "icon": "circle"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.539285,6.283329]
+                    }
+                },{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Nucleo Recreativo Granizal</h2><p>The sports facility hosts a Story Time event that has reading aloud sessions, games and activities with children on Tuesdays at 2pm weekly. The Mobile Book, a mobile library system, is also set up here at 11am on Tuesdays every week.</p>",
+                        "icon": "circle"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.544847,6.291188]
+                    }
+                },{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>UVA Nuevo Amanecer</h2><p>The school hosts a Story Time event that has reading aloud sessions, games and activities with children on Sundays at 2pm weekly. The Mobile Book, a mobile library system, is also set up here at 11am on Sundays every week.</p>",
+                        "icon": "square"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.538523,6.297570]
+                    }
+                },
+
+                    {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Acevedo Metrocable</h2><p></p>",
+                        "icon": "bus"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.55826633033337, 6.3002430096960325]
+                    }
+                },{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Andalucia Metrocable</h2><p></p>",
+                        "icon": "bus"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.55197708485419, 6.296269865228993]
+                    }
+                },{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Popular Metrocable</h2><p></p>",
+                        "icon": "bus"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.54818734233456, 6.295124538134317]
+                    }
+                },{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h2>Santo Domingo Metrocable</h2><p></p>",
+                        "icon": "bus"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-75.54171713003386, 6.293157237364042],
+                    
+                    },
+                }]
+            }
+        },
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true
+        }
+    });
+
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on('click', 'places', function (e) {
+        new mapboxgl.Popup()
+            .setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(e.features[0].properties.description)
+            .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+        // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+    map.on('click', 'places', function (e) {
+        map.flyTo({center: e.features[0].geometry.coordinates});
+    });
+
+    // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+});
+
+map.on('load', function () {
+    map.addLayer({
+        'id': 'santodomingo',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'description': '<strong>Santo Domingo Savio</strong><p></p>',
+                'geometry': {
+                    'type': 'Polygon',
+                    'coordinates': [[
+                        [-75.54563714699103, 6.301322986763651],
+                        [-75.54564854886547, 6.301028329204286],
+                        [-75.54576256750987, 6.300008359482419],
+                        [-75.54607041784826, 6.299679702145298],
+                        [-75.54627565141675, 6.299532372927118],
+                        [-75.54640107192127, 6.2990337198717725],
+                        [-75.5464922868454,  6.2984897341780055],
+                        [-75.54676593158906, 6.298115743687319],
+                        [-75.54690275396806, 6.297979747073285],
+                        [-75.54699396889215, 6.297571757031548],
+                        [-75.54689135210792, 6.297209098944435],
+                        [-75.54701677261245, 6.29649511509065],
+                        [-75.54721060432078, 6.296291119519523],
+                        [-75.54772368822769, 6.295883128150976],
+                        [-75.54784910873222,  6.29550913576854],
+                        [-75.54775789382246, 6.294874481436125],
+                        [-75.54837359451356, 6.293525838392469],
+                        [-75.54701677261245, 6.29327650904068],
+                        [-75.5468799502478, 6.293344507953691],
+                        [-75.5464922868454, 6.293401173724391],
+                        [-75.5458309786994, 6.293355841116906],
+                        [-75.54544331529702, 6.293265175875774],
+                        [-75.54516967055334, 6.293004513242536],
+                        [-75.54501004443972, 6.29280051630046],
+                        [-75.54493801797452, 6.292446379262401],
+                        [-75.54397944943511, 6.292687084956768],
+                        [-75.54377764552072, 6.292326026373431],
+                        [-75.54374737493421, 6.292175585235583],
+                        [-75.54320250438947, 6.292416291055389],
+                        [-75.54309151224734, 6.292506555696434], 
+                        [-75.54268790443125, 6.292436349860267],
+                        [-75.54226411623263, 6.292386202821405],
+                        [-75.54176969666965, 6.292506555696434],
+                        [-75.54149726139096, 6.292807437762107],
+                        [-75.5413862692488, 6.293158466597475],
+                        [-75.54142663002662, 6.29380034732992], 
+                        [-75.54146699080442, 6.294141346125187],
+                        [-75.5413559986623, 6.294552550256299],
+                        [-75.54122482612493, 6.2947531375210275],
+                        [-75.54095239084621,6.295214487963733],
+                        [-75.54054878304281, 6.295535427146163],
+                        [-75.54034697912843, 6.295705925989566],
+                        [-75.54035706933237, 6.29616727558593],
+                        [-75.54049833206103,6.296518302150716],
+                        [-75.54042770069671, 6.29685929916144],
+                        [-75.54040752030149, 6.2972303839033685],
+                        [-75.54064269617965, 6.297679837461004],
+                        [-75.54089435961838, 6.298158375031562],
+                        [-75.54097095283706, 6.298441147021265],
+                        [-75.54117884872424, 6.298767422199504],
+                        [-75.5414961634972, 6.299322089541363],
+                        [-75.54175876883414, 6.300126899935236],
+                        [-75.54230586326312, 6.299865880481789],
+                        [-75.54249187538139, 6.300181278962398],
+                        [-75.54254658481739, 6.300746820597283],
+                        [-75.54228397949423, 6.3010622185424126],
+                        [-75.54221832816003, 6.301290610031145],
+                        [-75.54234963082845, 6.301464622532393],
+                        [-75.54245904971427, 6.3015516287679105],
+                        [-75.54259035238272, 6.301812647359711],
+                        [-75.54278730637171,  6.3018779019905935],
+                        [-75.54297331848991, 6.301758268503534],
+                        [-75.5430936792602, 6.301736516951223],
+                        [-75.54335628459714, 6.3018887777707135],
+                        [-75.54358606425318, 6.3020519142948075],
+                        [-75.54367359937008, 6.302171547727809],
+                        [-75.54390337902616, 6.302030162768503],
+                        [-75.54413315869594, 6.301834398908824],
+                        [-75.54438482213469, 6.301584256100824],
+                        [-75.54462554368895, 6.30143199519199],
+                        [-75.5450632192459, 6.301334113172189],
+                        [-75.54524923135043, 6.301312361602143],
+                        [-75.54546806912202, 6.301410243639708],
+                        [-75.54563714699103, 6.301322986763651]
+                        ]]
+                }
+            }
+        }, 
+        'layout': {},
+        'paint': {
+            'fill-color': '#088',
+            'fill-opacity': 0.15
+        }
+    });
+
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on('click', 'santodomingo', function () {
+        new mapboxgl.Popup()
+            .setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(e.features[0].properties.description)
+            .addTo(map);    
+    });
+
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'santodomingo', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'santodomingo', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": 
+                    [
+                    [-75.55826633033337, 6.3002430096960325],
+                    [-75.55197708485419, 6.296269865228993],
+                    [-75.54818734233456, 6.295124538134317],
+                    [-75.54171713003386, 6.293157237364042]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#fff",
+            "line-width": 2
+        }
+    });
+
+map.addLayer({
+        "id": "network",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": 
+                    [
+                    [-75.544834, 6.292311],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.567063, 6.252963],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.542343, 6.293341],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.53884, 6.298367],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.539864,6.291569],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.545044,6.286797],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.539285,6.283329],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.544847,6.291188],
+                    [-75.54417995311897, 6.294680726284298],
+                    [-75.538523,6.297570],
+                    [-75.54417995311897, 6.294680726284298]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#ff0",
+            "line-width": .25
+        }
+    });
+
+map.addLayer({
+        "id": "outline",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [-75.54563714699103, 6.301322986763651],
+                        [-75.54564854886547, 6.301028329204286],
+                        [-75.54576256750987, 6.300008359482419],
+                        [-75.54607041784826, 6.299679702145298],
+                        [-75.54627565141675, 6.299532372927118],
+                        [-75.54640107192127, 6.2990337198717725],
+                        [-75.5464922868454,  6.2984897341780055],
+                        [-75.54676593158906, 6.298115743687319],
+                        [-75.54690275396806, 6.297979747073285],
+                        [-75.54699396889215, 6.297571757031548],
+                        [-75.54689135210792, 6.297209098944435],
+                        [-75.54701677261245, 6.29649511509065],
+                        [-75.54721060432078, 6.296291119519523],
+                        [-75.54772368822769, 6.295883128150976],
+                        [-75.54784910873222,  6.29550913576854],
+                        [-75.54775789382246, 6.294874481436125],
+                        [-75.54837359451356, 6.293525838392469],
+                        [-75.54701677261245, 6.29327650904068],
+                        [-75.5468799502478, 6.293344507953691],
+                        [-75.5464922868454, 6.293401173724391],
+                        [-75.5458309786994, 6.293355841116906],
+                        [-75.54544331529702, 6.293265175875774],
+                        [-75.54516967055334, 6.293004513242536],
+                        [-75.54501004443972, 6.29280051630046],
+                        [-75.54493801797452, 6.292446379262401],
+                        [-75.54397944943511, 6.292687084956768],
+                        [-75.54377764552072, 6.292326026373431],
+                        [-75.54374737493421, 6.292175585235583],
+                        [-75.54320250438947, 6.292416291055389],
+                        [-75.54309151224734, 6.292506555696434], 
+                        [-75.54268790443125, 6.292436349860267],
+                        [-75.54226411623263, 6.292386202821405],
+                        [-75.54176969666965, 6.292506555696434],
+                        [-75.54149726139096, 6.292807437762107],
+                        [-75.5413862692488, 6.293158466597475],
+                        [-75.54142663002662, 6.29380034732992], 
+                        [-75.54146699080442, 6.294141346125187],
+                        [-75.5413559986623, 6.294552550256299],
+                        [-75.54122482612493, 6.2947531375210275],
+                        [-75.54095239084621,6.295214487963733],
+                        [-75.54054878304281, 6.295535427146163],
+                        [-75.54034697912843, 6.295705925989566],
+                        [-75.54035706933237, 6.29616727558593],
+                        [-75.54049833206103,6.296518302150716],
+                        [-75.54042770069671, 6.29685929916144],
+                        [-75.54040752030149, 6.2972303839033685],
+                        [-75.54064269617965, 6.297679837461004],
+                        [-75.54089435961838, 6.298158375031562],
+                        [-75.54097095283706, 6.298441147021265],
+                        [-75.54117884872424, 6.298767422199504],
+                        [-75.5414961634972, 6.299322089541363],
+                        [-75.54175876883414, 6.300126899935236],
+                        [-75.54230586326312, 6.299865880481789],
+                        [-75.54249187538139, 6.300181278962398],
+                        [-75.54254658481739, 6.300746820597283],
+                        [-75.54228397949423, 6.3010622185424126],
+                        [-75.54221832816003, 6.301290610031145],
+                        [-75.54234963082845, 6.301464622532393],
+                        [-75.54245904971427, 6.3015516287679105],
+                        [-75.54259035238272, 6.301812647359711],
+                        [-75.54278730637171,  6.3018779019905935],
+                        [-75.54297331848991, 6.301758268503534],
+                        [-75.5430936792602, 6.301736516951223],
+                        [-75.54335628459714, 6.3018887777707135],
+                        [-75.54358606425318, 6.3020519142948075],
+                        [-75.54367359937008, 6.302171547727809],
+                        [-75.54390337902616, 6.302030162768503],
+                        [-75.54413315869594, 6.301834398908824],
+                        [-75.54438482213469, 6.301584256100824],
+                        [-75.54462554368895, 6.30143199519199],
+                        [-75.5450632192459, 6.301334113172189],
+                        [-75.54524923135043, 6.301312361602143],
+                        [-75.54546806912202, 6.301410243639708],
+                        [-75.54563714699103, 6.301322986763651]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#ffc",
+            "line-width": .5
+        }
+    });
+
+map.addLayer({
+        "id": "outline2",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [-75.54425242303763,6.304393126833062],
+                        [-75.54457011433622,6.303937014301411],
+                        [-75.54642331361804,6.304393126833062],
+                        [-75.5470057476826,6.303410730105597],
+                        [-75.54797245470586,6.303921709673801],
+                        [-75.54797245470586,6.3043711586887525],
+                        [-75.54842463806837,6.304318282350266],
+                        [-75.54853103415313,6.30397458605276],
+                        [-75.54829164296024,6.303472260286597],
+                        [-75.54879702436081,6.302626236825873],
+                        [-75.54869062827602,6.300801994050232],
+                        [-75.55092494604803,6.29659827976738],
+                        [-75.55057915877029,6.295487858981403],
+                        [-75.54895661848369,6.29480045446347],
+                        [-75.54938220282288,6.294456751863336],
+                        [-75.54996738128492,6.294350997160834],
+                        [-75.55039296562408,6.293452081406016],
+                        [-75.55025997052458,6.292632480382096],
+                        [-75.55038714937231,6.292273516840851],
+                        [-75.5533284804457,6.291015874830094],
+                        [-75.55336613586627,6.290042728695127],
+                        [-75.55532421756448,6.289069580762543],
+                        [-75.55460876463488,6.288620434928006],
+                        [-75.55261302751612,6.2884332907298415],
+                        [-75.55084322290851,6.2881712887296],
+                        [-75.54756720160057,6.2877595710444325],
+                        [-75.5442911802926,6.287347853008896],
+                        [-75.54244606483165,6.28723556620875],
+                        [-75.54180592274317,6.286599273956156],
+                        [-75.54026205063448,6.286748989843176],
+                        [-75.54011142896445,6.2862249840136],
+                        [-75.53901942186589,6.286786418814302],
+                        [-75.53822865809515,6.286823847782685],
+                        [-75.5381156918457,6.287909286597426],
+                        [-75.53860521226412,6.288695292598035],
+                        [-75.53807803642513,6.289631012491924],
+                        [-75.53830396893628,6.290155014888981],
+                        [-75.53864286768467,6.290454444596477],
+                        [-75.53792741475507,6.292101304892128],
+                        [-75.53852990143521,6.293299018201353],
+                        [-75.53770148225614,6.294122444493723],
+                        [-75.53721196182546,6.2950207262397555],
+                        [-75.5378198987956,6.295541002656989],
+                        [-75.5375933189827,6.2965995046409375],
+                        [-75.53682294764232,6.2984012051717855],
+                        [-75.53797850466023,6.300180378322082],
+                        [-75.53965519523757,6.301396518467897],
+                        [-75.54019898677973,6.302342403295242],
+                        [-75.54139985976316,6.302770302996905],
+                        [-75.54241946889923,6.303828790236977],
+                        [-75.54380160573008,6.303963916108671],
+                        [-75.54425242303763,6.304393126833062]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#ffc",
+            "line-width": .15
+        }
+    });
+
+map.addLayer({
+        'id': 'espana1',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'description': '<strong>Santo Domingo Savio</strong><p></p>',
+                'geometry': {
+                    'type': 'Polygon',
+                    'coordinates': [[
+                        [-75.5443422315506, 6.294681897416609],
+                        [-75.54434004570602, 6.294642789398225],
+                        [-75.54426026230375, 6.294567289143615],
+                        [-75.54411162473282, 6.2946302965439],
+                        [-75.54406080379266, 6.294663429751765],
+                        [-75.54406736133714, 6.2947074262891505],
+                        [-75.54416791028439, 6.2948100848476685],
+                        [-75.5443422315506, 6.294681897416609]
+                        ]]
+                }
+            }
+        }, 
+        'layout': {},
+        'paint': {
+            'fill-color': '#ff0',
+            'fill-opacity': .5
+        }
+    });
+
+map.addLayer({
+        'id': 'espana2',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'description': '<strong>Santo Domingo Savio</strong><p></p>',
+                'geometry': {
+                    'type': 'Polygon',
+                    'coordinates': [[
+                        [-75.544254,6.29503],
+                        [-75.544277,6.294997],
+                        [-75.544276,6.294929],
+                        [-75.544245,6.294855],
+                        [-75.544131,6.294867],
+                        [-75.544065,6.294885],
+                        [-75.544088,6.29504],
+                        [-75.544254,6.29503]
+                        ]]
+                }
+            }
+        }, 
+        'layout': {},
+        'paint': {
+            'fill-color': '#ff0',
+            'fill-opacity': .5
+        }
+    });
+
+map.addLayer({
+        'id': 'espana3',
+        'type': 'fill',
+        'source': {
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'description': '<strong>Santo Domingo Savio</strong><p></p>',
+                'geometry': {
+                    'type': 'Polygon',
+                    'coordinates': [[
+                        [-75.543962, 6.294599],
+                        [-75.544048,6.294545],
+                        [-75.544061,6.294508],
+                        [-75.544017,6.2944],
+                        [-75.543916,6.294442],
+                        [-75.543864,6.294517],
+                        [-75.543892,6.294569],
+                        [-75.543962,6.294599]
+                        ]]
+                }
+            }
+        }, 
+        'layout': {},
+        'paint': {
+            'fill-color': '#ff0',
+            'fill-opacity': .5
+        }
+    });
+
+
+    // When a click event occurs on a feature in the states layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('click', 'states-layer', function (e) {
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(e.features[0].properties.name)
+            .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'espana', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'espana', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+})
+
+</script> 
+
+</body>
+</html>
